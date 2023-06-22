@@ -30,13 +30,13 @@ class Wall
 	}
 }
 
-class Song
+class NNBottlesSong
 {
 	private $wall = null;
 
-	public function __construct()
+	public function __construct(Wall $wall)
 	{
-		$this->wall = new Wall();
+		$this->wall = $wall;
 	}
 
 	public function sing()
@@ -54,5 +54,5 @@ class Song
 	}
 }
 
-$song = new Song();
+$song = new NNBottlesSong(new Wall());
 $song->sing();
